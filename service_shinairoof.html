@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>施工案内｜株式会社シンアイルーフ | 埼玉県越谷市の屋根工事専門店</title>
+  <meta name="description" content="シンアイルーフの施工案内。屋根葺き替え工事・カバー工法・雨漏り修繕・各種板金工事。ガルバリウム鋼板対応。越谷市・草加市・春日部市対応。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --iron:#1c2b3a;--iron-dark:#111d28;--iron-mid:#2a3f55;
+      --gold:#c8970a;--gold-light:#e0ae1f;--gold-pale:#fdf6e0;
+      --white:#ffffff;--off-white:#f5f7f9;--gray-light:#e8ecf0;
+      --gray:#7a8898;--text:#1c2b3a;--text-light:#4a5a6a;
+      --serif:'Noto Serif JP',serif;--sans:'Noto Sans JP',sans-serif;--display:'Oswald',sans-serif;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);color:var(--text);background:var(--white);overflow-x:hidden}
+    img{max-width:100%;height:auto;display:block}
+    a{text-decoration:none;color:inherit}
+
+    /* HEADER */
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--iron-dark);box-shadow:0 2px 20px rgba(0,0,0,.5)}
+    .site-header::after{content:'';display:block;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold))}
+    .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:66px}
+    .logo a{display:flex;align-items:center;gap:12px;color:#fff}
+    .logo-mark{width:44px;height:44px;background:var(--gold);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 10px rgba(200,151,10,.45)}
+    .logo-mark svg{width:28px;height:28px;fill:var(--iron-dark)}
+    .logo-text .company{font-family:var(--serif);font-size:15px;font-weight:700;color:#fff;letter-spacing:.05em}
+    .logo-text .tagline{font-size:10px;color:rgba(255,255,255,.55);letter-spacing:.1em;margin-top:2px}
+    .global-nav ul{display:flex;list-style:none;gap:2px}
+    .global-nav a{display:block;padding:8px 12px;color:rgba(255,255,255,.78);font-size:13px;font-weight:500;border-radius:3px;transition:all .2s}
+    .global-nav a:hover,.global-nav a.active{color:var(--gold-light);background:rgba(255,255,255,.07)}
+    .header-cta{display:flex;align-items:center;gap:16px}
+    .header-tel{color:#fff;text-align:right;line-height:1.2}
+    .header-tel .tel-label{font-size:10px;color:rgba(255,255,255,.55)}
+    .header-tel .tel-num{font-family:var(--display);font-size:20px;font-weight:600;color:var(--gold-light)}
+    .btn-header{background:var(--gold);color:var(--iron-dark);font-size:12px;font-weight:700;padding:10px 18px;border-radius:3px;letter-spacing:.05em;white-space:nowrap;transition:all .2s}
+    .btn-header:hover{background:var(--gold-light)}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+    .hamburger span{width:24px;height:2px;background:#fff;border-radius:2px}
+    .mobile-menu{display:none;position:fixed;inset:0;top:69px;background:var(--iron-dark);z-index:999;padding:40px 24px;flex-direction:column}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{display:block;padding:18px 0;color:rgba(255,255,255,.85);font-size:17px;font-family:var(--serif);border-bottom:1px solid rgba(255,255,255,.07)}
+    .mobile-menu .m-tel{margin-top:28px;color:var(--gold-light);font-family:var(--display);font-size:26px;font-weight:600}
+
+    /* PAGE HERO */
+    .page-hero{margin-top:69px;position:relative;height:280px;display:flex;align-items:center;overflow:hidden}
+    .page-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover no-repeat}
+    .page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(17,29,40,.92) 0%,rgba(28,43,58,.78) 100%)}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));z-index:3}
+    .page-hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 40px}
+    .breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+    .breadcrumb a{font-size:12px;color:rgba(255,255,255,.6)}
+    .breadcrumb span{font-size:12px;color:rgba(255,255,255,.4)}
+    .page-hero-en{font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--gold-light);text-transform:uppercase;margin-bottom:10px}
+    .page-hero-title{font-family:var(--serif);color:#fff;font-size:clamp(24px,4vw,42px);font-weight:700;line-height:1.4}
+
+    /* SERVICE NAV */
+    .service-nav{background:var(--iron-mid);position:sticky;top:69px;z-index:100}
+    .service-nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;overflow-x:auto}
+    .service-nav a{display:block;padding:15px 20px;font-size:13px;font-weight:700;color:rgba(255,255,255,.6);letter-spacing:.05em;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap}
+    .service-nav a:hover{color:#fff}
+    .service-nav a.active{color:var(--gold-light);border-bottom-color:var(--gold)}
+
+    /* COMMON */
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    .section-head{text-align:center;margin-bottom:56px}
+    .section-en{font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+    .section-title{font-family:var(--serif);font-size:clamp(22px,3vw,34px);font-weight:700;color:var(--iron);line-height:1.45}
+    .section-title span{color:var(--gold)}
+    .divider{width:50px;height:3px;background:var(--gold);margin:14px auto 0;border-radius:2px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;font-size:15px;font-weight:700;border-radius:3px;letter-spacing:.05em;transition:all .25s;cursor:pointer;border:none}
+    .btn-primary{background:var(--gold);color:var(--iron-dark)}
+    .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,151,10,.4)}
+    .fade-up{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+    .fade-up.is-visible{opacity:1;transform:translateY(0)}
+
+    /* SERVICE BLOCKS */
+    .service-block{padding:88px 0;scroll-margin-top:130px}
+    .sb-odd{background-color:var(--off-white);background-image:radial-gradient(circle,rgba(28,43,58,.06) 1px,transparent 1px);background-size:28px 28px}
+    .sb-even{background:linear-gradient(135deg,#111d28 0%,#1c2b3a 100%);position:relative;overflow:hidden}
+    .sb-even::before{content:'';position:absolute;top:-100px;right:-100px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(200,151,10,.15) 0%,transparent 70%)}
+    .sb-even .section-title{color:#fff}
+    .sb-even .section-en{color:var(--gold-light)}
+    .sb-even .divider{background:var(--gold)}
+    .sb-even .section-desc{color:rgba(255,255,255,.75)}
+    .service-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+    .service-layout.reverse{direction:rtl}
+    .service-layout.reverse > *{direction:ltr}
+    .service-img-wrap{border-radius:10px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.2)}
+    .service-img-wrap img{width:100%;height:320px;object-fit:cover}
+    .service-content-title{font-family:var(--serif);font-size:clamp(20px,2.5vw,28px);font-weight:700;color:var(--iron);margin-bottom:16px;line-height:1.45}
+    .sb-even .service-content-title{color:#fff}
+    .service-content-desc{font-size:14.5px;line-height:1.9;color:var(--text-light);margin-bottom:24px}
+    .sb-even .service-content-desc{color:rgba(255,255,255,.75)}
+    .service-points{list-style:none;margin-bottom:24px}
+    .service-points li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--gray-light);font-size:14px}
+    .sb-even .service-points li{border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.85)}
+    .service-points li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px}
+
+    /* PRICE TABLE */
+    .price-table{width:100%;border-collapse:collapse;font-size:14px}
+    .price-table th{background:var(--iron);color:#fff;padding:14px 20px;text-align:left;font-weight:700}
+    .price-table td{padding:14px 20px;border-bottom:1px solid var(--gray-light)}
+    .price-table tr:last-child td{border-bottom:none}
+    .price-table tr:nth-child(even) td{background:var(--off-white)}
+    .price-note{font-size:12px;color:var(--gray);margin-top:10px;line-height:1.7}
+
+    /* CTA BAND */
+    .cta-band{background:var(--gold);padding:40px 24px;text-align:center}
+    .cta-band-title{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--iron-dark);margin-bottom:12px}
+    .cta-band-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+    .btn-dark{background:var(--iron-dark);color:#fff;display:inline-flex;align-items:center;gap:8px;padding:16px 32px;font-size:15px;font-weight:700;border-radius:3px;transition:all .25s;cursor:pointer;border:none}
+    .btn-dark:hover{background:#000;transform:translateY(-2px)}
+
+    /* FOOTER */
+    .site-footer{background:var(--iron-dark);color:rgba(255,255,255,.7);padding:64px 0 0}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
+    .footer-brand .logo-text .company{color:#fff;font-size:17px}
+    .footer-brand .logo-text .tagline{color:rgba(255,255,255,.5)}
+    .footer-about{font-size:13.5px;line-height:1.85;margin-top:16px;color:rgba(255,255,255,.6)}
+    .footer-info{margin-top:20px;font-size:13px;line-height:2}
+    .footer-info span{color:rgba(255,255,255,.4);margin-right:8px}
+    .footer-nav-title{font-family:var(--serif);font-size:14px;font-weight:700;color:#fff;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(200,151,10,.3)}
+    .footer-nav-list{list-style:none}
+    .footer-nav-list li{margin-bottom:10px}
+    .footer-nav-list a{font-size:13.5px;color:rgba(255,255,255,.65);transition:color .2s}
+    .footer-nav-list a:hover{color:var(--gold-light)}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 24px;text-align:center;font-size:12px;color:rgba(255,255,255,.4)}
+    .footer-bottom::before{content:'';display:block;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));margin-bottom:20px}
+
+    @media(max-width:900px){
+      .global-nav,.header-cta{display:none}
+      .hamburger{display:flex}
+      .service-layout{grid-template-columns:1fr}
+      .service-layout.reverse{direction:ltr}
+      .footer-grid{grid-template-columns:1fr;gap:32px}
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="index_shinairoof.html">
+        <div class="logo-mark">
+          <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="14,2 27,12 27,26 1,26 1,12" fill="none" stroke="#1c2b3a" stroke-width="2.5"/>
+            <line x1="14" y1="5" x2="14" y2="26" stroke="#1c2b3a" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <div class="company">株式会社シンアイルーフ</div>
+          <div class="tagline">SHINAI ROOF CO., LTD.</div>
+        </div>
+      </a>
+    </div>
+    <nav class="global-nav">
+      <ul>
+        <li><a href="index_shinairoof.html">HOME</a></li>
+        <li><a href="service_shinairoof.html" class="active">施工案内</a></li>
+        <li><a href="works_shinairoof.html">施工実績</a></li>
+        <li><a href="recruit_shinairoof.html">採用情報</a></li>
+        <li><a href="company_shinairoof.html">会社概要</a></li>
+        <li><a href="contact_shinairoof.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <div class="header-tel">
+        <div class="tel-label">お気軽にご相談ください</div>
+        <div class="tel-num">048-990-0403</div>
+      </div>
+      <a href="contact_shinairoof.html" class="btn-header">無料診断</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index_shinairoof.html">HOME</a>
+  <a href="service_shinairoof.html">施工案内</a>
+  <a href="works_shinairoof.html">施工実績</a>
+  <a href="recruit_shinairoof.html">採用情報</a>
+  <a href="company_shinairoof.html">会社概要</a>
+  <a href="contact_shinairoof.html">お問い合わせ</a>
+  <div class="m-tel">048-990-0403</div>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index_shinairoof.html">HOME</a>
+      <span>›</span>
+      <span style="color:rgba(255,255,255,.75)">施工案内</span>
+    </div>
+    <div class="page-hero-en">SERVICES</div>
+    <h1 class="page-hero-title">施工案内</h1>
+  </div>
+</section>
+
+<nav class="service-nav">
+  <div class="service-nav-inner">
+    <a href="#fukikae" class="active">屋根葺き替え</a>
+    <a href="#cover">カバー工法</a>
+    <a href="#amore">雨漏り修繕</a>
+    <a href="#bankin">板金工事</a>
+  </div>
+</nav>
+
+<!-- 屋根葺き替え -->
+<section class="service-block sb-odd" id="fukikae">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-en">ROOF REPLACEMENT</div>
+      <h2 class="section-title">屋根<span>葺き替え工事</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="service-layout fade-up">
+      <div class="service-img-wrap">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="屋根葺き替え工事">
+      </div>
+      <div class="service-content">
+        <h3 class="service-content-title">既存屋根を一新。根本的な問題解決。</h3>
+        <p class="service-content-desc">既存の屋根材を完全に撤去し、防水シート（ルーフィング）から新しい屋根材まで一新する工法です。雨漏りの根本的な解決や、屋根の寿命を大幅に延ばすことができます。</p>
+        <ul class="service-points">
+          <li>既存屋根材の撤去・廃棄</li>
+          <li>野地板の補修・交換（必要な場合）</li>
+          <li>防水シート（ルーフィング）の新設</li>
+          <li>新規屋根材（ガルバリウム鋼板など）の施工</li>
+          <li>棟板金・貫板の取付け・コーキング仕上げ</li>
+        </ul>
+        <a href="contact_shinairoof.html" class="btn btn-primary">無料診断を申し込む</a>
+      </div>
+    </div>
+    <div class="fade-up" style="margin-top:40px">
+      <table class="price-table">
+        <thead><tr><th>施工内容</th><th>目安価格</th><th>備考</th></tr></thead>
+        <tbody>
+          <tr><td>スレート屋根 葺き替え（30坪）</td><td>80万〜120万円</td><td>材料・施工費込</td></tr>
+          <tr><td>瓦屋根 葺き替え（30坪）</td><td>100万〜150万円</td><td>廃材処分費含む</td></tr>
+          <tr><td>金属屋根 葺き替え（30坪）</td><td>70万〜100万円</td><td>ガルバリウム鋼板</td></tr>
+        </tbody>
+      </table>
+      <p class="price-note">※価格は目安です。屋根の状態・形状・広さにより変動します。現地調査・お見積は無料です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- カバー工法 -->
+<section class="service-block sb-even" id="cover">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-en">COVER METHOD</div>
+      <h2 class="section-title" style="color:#fff">カバー工法<span>（重ね葺き）</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="service-layout reverse fade-up">
+      <div class="service-img-wrap">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="カバー工法">
+      </div>
+      <div class="service-content">
+        <h3 class="service-content-title">既存屋根を活かした、コストを抑えたリフォーム。</h3>
+        <p class="service-content-desc">既存の屋根材の上に新しい金属屋根材を重ねて施工する工法。廃材が少なく工期が短いため、費用を大幅に抑えることができます。ガルバリウム鋼板を使用するため耐久性・防水性も向上します。</p>
+        <ul class="service-points">
+          <li>既存屋根材の上から新素材を施工</li>
+          <li>廃材撤去費が不要でコスト削減</li>
+          <li>工期が短く（2〜4日程度）生活への影響小</li>
+          <li>軽量ガルバリウム鋼板で耐震性向上</li>
+          <li>断熱材一体型製品もご選択可能</li>
+        </ul>
+        <a href="contact_shinairoof.html" class="btn btn-primary">無料診断を申し込む</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 雨漏り修繕 -->
+<section class="service-block sb-odd" id="amore">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-en">LEAK REPAIR</div>
+      <h2 class="section-title">雨漏り修繕・<span>防水工事</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="service-layout fade-up">
+      <div class="service-img-wrap">
+        <img src="https://images.unsplash.com/photo-1621155346337-1d19476ba7d6?w=800&q=80" alt="雨漏り修繕">
+      </div>
+      <div class="service-content">
+        <h3 class="service-content-title">原因を的確に特定し、確実に修繕。</h3>
+        <p class="service-content-desc">突然の雨漏りにも迅速に対応。棟板金・貫板の劣化、コーキングの劣化・切れ目、屋根材のひび割れなど、さまざまな原因を経験豊富なスタッフが正確に診断・修繕します。</p>
+        <ul class="service-points">
+          <li>現地調査による原因の特定</li>
+          <li>棟板金・貫板の交換・補修</li>
+          <li>コーキング処理・防水処理</li>
+          <li>屋根材のひび割れ・浮き補修</li>
+          <li>谷板金・水切り板金の交換</li>
+        </ul>
+        <a href="contact_shinairoof.html" class="btn btn-primary">緊急・急ぎの相談はこちら</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 板金工事 -->
+<section class="service-block sb-even" id="bankin">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-en">SHEET METAL</div>
+      <h2 class="section-title" style="color:#fff">各種<span>板金工事</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="service-layout reverse fade-up">
+      <div class="service-img-wrap">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="板金工事">
+      </div>
+      <div class="service-content">
+        <h3 class="service-content-title">金属加工のプロが手がける精度の高い板金施工。</h3>
+        <p class="service-content-desc">棟板金・貫板の交換から、谷板金・水切り板金・霧除け板金など、さまざまな板金工事に対応。一枚一枚丁寧に加工・施工し、長期間の耐久性を確保します。</p>
+        <ul class="service-points">
+          <li>棟板金・貫板の撤去・新設</li>
+          <li>谷板金・水切り板金の交換</li>
+          <li>霧除け板金・雪止め設置</li>
+          <li>ガルバリウム鋼板・カラー鋼板加工</li>
+          <li>各種コーキング・シーリング処理</li>
+        </ul>
+        <a href="contact_shinairoof.html" class="btn btn-primary">無料診断を申し込む</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h2 class="cta-band-title">屋根のお悩みはシンアイルーフへ。現地調査・お見積は無料です。</h2>
+  <p style="font-size:14px;color:var(--iron-mid)">越谷市・草加市・春日部市・さいたま市など埼玉県内全域対応</p>
+  <div class="cta-band-btns">
+    <a href="contact_shinairoof.html" class="btn-dark">WEBから申し込む</a>
+    <a href="tel:0489900403" style="display:inline-flex;align-items:center;gap:8px;padding:16px 32px;font-size:15px;font-weight:700;border-radius:3px;background:white;color:var(--iron-dark);transition:all .25s;cursor:pointer;border:2px solid var(--iron-dark)">📞 048-990-0403</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <a href="index_shinairoof.html" style="display:flex;align-items:center;gap:12px;">
+            <div class="logo-mark"><svg viewBox="0 0 28 28"><polygon points="14,2 27,12 27,26 1,26 1,12" fill="none" stroke="#1c2b3a" stroke-width="2.5"/><line x1="14" y1="5" x2="14" y2="26" stroke="#1c2b3a" stroke-width="2"/></svg></div>
+            <div class="logo-text"><div class="company">株式会社シンアイルーフ</div><div class="tagline">SHINAI ROOF CO., LTD.</div></div>
+          </a>
+        </div>
+        <p class="footer-about">埼玉県越谷市を拠点に、屋根工事・板金工事を専門とする会社です。創業33年の技術力と地域に根ざした誠実な対応で、多くのお客様の住まいをお守りしています。</p>
+        <div class="footer-info">
+          <div><span>📍</span>〒343-0844 埼玉県越谷市大間野町4-241</div>
+          <div><span>📞</span>048-990-0403</div>
+          <div><span>🕐</span>受付時間 8:00〜17:00（日曜・祝日除く）</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-nav-title">施工案内</div>
+        <ul class="footer-nav-list">
+          <li><a href="service_shinairoof.html#fukikae">屋根葺き替え工事</a></li>
+          <li><a href="service_shinairoof.html#cover">カバー工法</a></li>
+          <li><a href="service_shinairoof.html#amore">雨漏り修繕</a></li>
+          <li><a href="service_shinairoof.html#bankin">各種板金工事</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-nav-title">会社情報</div>
+        <ul class="footer-nav-list">
+          <li><a href="company_shinairoof.html">会社概要</a></li>
+          <li><a href="works_shinairoof.html">施工実績</a></li>
+          <li><a href="recruit_shinairoof.html">採用情報</a></li>
+          <li><a href="contact_shinairoof.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 株式会社シンアイルーフ All Rights Reserved.</p></div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('is-visible'); });
+  }, {threshold:0.1});
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Service nav active
+  const sections = document.querySelectorAll('.service-block');
+  const navLinks = document.querySelectorAll('.service-nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if(window.scrollY >= s.offsetTop - 200) current = s.id; });
+    navLinks.forEach(a => {
+      a.classList.remove('active');
+      if(a.getAttribute('href') === '#'+current) a.classList.add('active');
+    });
+  });
+
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+</script>
+</body>
+</html>

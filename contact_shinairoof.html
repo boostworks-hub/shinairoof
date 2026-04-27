@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ｜株式会社シンアイルーフ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --iron:#1c2b3a;--iron-dark:#111d28;--iron-mid:#2a3f55;
+      --gold:#c8970a;--gold-light:#e0ae1f;--gold-pale:#fdf6e0;
+      --white:#ffffff;--off-white:#f5f7f9;--gray-light:#e8ecf0;
+      --gray:#7a8898;--text:#1c2b3a;--text-light:#4a5a6a;--rust:#b94422;
+      --serif:'Noto Serif JP',serif;--sans:'Noto Sans JP',sans-serif;--display:'Oswald',sans-serif;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);color:var(--text);background:var(--white);overflow-x:hidden}
+    img{max-width:100%;height:auto;display:block}
+    a{text-decoration:none;color:inherit}
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--iron-dark);box-shadow:0 2px 20px rgba(0,0,0,.5)}
+    .site-header::after{content:'';display:block;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold))}
+    .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:66px}
+    .logo a{display:flex;align-items:center;gap:12px;color:#fff}
+    .logo-mark{width:44px;height:44px;background:var(--gold);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .logo-mark svg{width:28px;height:28px}
+    .logo-text .company{font-family:var(--serif);font-size:15px;font-weight:700;color:#fff;letter-spacing:.05em}
+    .logo-text .tagline{font-size:10px;color:rgba(255,255,255,.55);letter-spacing:.1em;margin-top:2px}
+    .global-nav ul{display:flex;list-style:none;gap:2px}
+    .global-nav a{display:block;padding:8px 12px;color:rgba(255,255,255,.78);font-size:13px;font-weight:500;border-radius:3px;transition:all .2s}
+    .global-nav a:hover,.global-nav a.active{color:var(--gold-light);background:rgba(255,255,255,.07)}
+    .header-cta{display:flex;align-items:center;gap:16px}
+    .header-tel .tel-label{font-size:10px;color:rgba(255,255,255,.55)}
+    .header-tel .tel-num{font-family:var(--display);font-size:20px;font-weight:600;color:var(--gold-light)}
+    .btn-header{background:var(--gold);color:var(--iron-dark);font-size:12px;font-weight:700;padding:10px 18px;border-radius:3px;letter-spacing:.05em;white-space:nowrap}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+    .hamburger span{width:24px;height:2px;background:#fff;border-radius:2px}
+    .mobile-menu{display:none;position:fixed;inset:0;top:69px;background:var(--iron-dark);z-index:999;padding:40px 24px;flex-direction:column}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{display:block;padding:18px 0;color:rgba(255,255,255,.85);font-size:17px;font-family:var(--serif);border-bottom:1px solid rgba(255,255,255,.07)}
+    .mobile-menu .m-tel{margin-top:28px;color:var(--gold-light);font-family:var(--display);font-size:26px;font-weight:600}
+    .page-hero{margin-top:69px;position:relative;height:260px;display:flex;align-items:center;overflow:hidden}
+    .page-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1621155346337-1d19476ba7d6?w=1600&q=80') center/cover no-repeat}
+    .page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(17,29,40,.93) 0%,rgba(28,43,58,.8) 100%)}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));z-index:3}
+    .page-hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 40px}
+    .breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+    .breadcrumb a{font-size:12px;color:rgba(255,255,255,.6)}
+    .breadcrumb span{font-size:12px;color:rgba(255,255,255,.4)}
+    .page-hero-en{font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--gold-light);text-transform:uppercase;margin-bottom:10px}
+    .page-hero-title{font-family:var(--serif);color:#fff;font-size:clamp(24px,4vw,42px);font-weight:700;line-height:1.4}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    .section{padding:80px 0}
+    .section-head{text-align:center;margin-bottom:56px}
+    .section-en{font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+    .section-title{font-family:var(--serif);font-size:clamp(22px,3vw,34px);font-weight:700;color:var(--iron);line-height:1.45}
+    .section-title span{color:var(--gold)}
+    .divider{width:50px;height:3px;background:var(--gold);margin:14px auto 0;border-radius:2px}
+    .section-desc{margin-top:14px;color:var(--text-light);font-size:15px;line-height:1.85}
+    .fade-up{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+    .fade-up.is-visible{opacity:1;transform:translateY(0)}
+
+    /* CONTACT LAYOUT */
+    .contact-layout{display:grid;grid-template-columns:1fr 1.8fr;gap:48px;align-items:start}
+    .contact-info-card{background:var(--iron);border-radius:10px;padding:36px;color:white;position:sticky;top:100px}
+    .contact-info-title{font-family:var(--serif);font-size:18px;font-weight:700;color:white;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid rgba(200,151,10,.3)}
+    .contact-info-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .contact-info-item:last-child{border-bottom:none;margin-bottom:0}
+    .contact-info-icon{font-size:24px;flex-shrink:0;margin-top:2px}
+    .contact-info-label{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--gold-light);text-transform:uppercase;margin-bottom:4px}
+    .contact-info-val{font-size:14.5px;color:rgba(255,255,255,.82);line-height:1.7}
+    .contact-info-tel{font-family:var(--display);font-size:26px;font-weight:600;color:var(--gold-light);letter-spacing:.05em}
+
+    /* FORM */
+    .contact-form-wrap{background:var(--off-white);border-radius:10px;padding:40px}
+    .form-group{margin-bottom:22px}
+    .form-label{display:block;font-size:13px;font-weight:700;color:var(--iron);margin-bottom:8px}
+    .form-label .req{color:var(--rust);margin-left:4px;font-size:11px}
+    .form-input,.form-select,.form-textarea{
+      width:100%;padding:13px 16px;border:1.5px solid var(--gray-light);
+      border-radius:4px;font-size:14px;font-family:var(--sans);background:white;
+      transition:border-color .2s;
+    }
+    .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--gold);outline:none}
+    .form-textarea{resize:vertical}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .btn-submit{
+      width:100%;padding:18px;background:var(--gold);color:var(--iron-dark);
+      font-size:16px;font-weight:700;border:none;border-radius:4px;cursor:pointer;
+      letter-spacing:.05em;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:8px;
+    }
+    .btn-submit:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,151,10,.45)}
+
+    /* FOOTER */
+    .site-footer{background:var(--iron-dark);color:rgba(255,255,255,.7);padding:64px 0 0}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
+    .footer-brand .logo-text .company{color:#fff;font-size:17px}
+    .footer-brand .logo-text .tagline{color:rgba(255,255,255,.5)}
+    .footer-about{font-size:13.5px;line-height:1.85;margin-top:16px;color:rgba(255,255,255,.6)}
+    .footer-info{margin-top:20px;font-size:13px;line-height:2}
+    .footer-info span{color:rgba(255,255,255,.4);margin-right:8px}
+    .footer-nav-title{font-family:var(--serif);font-size:14px;font-weight:700;color:#fff;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(200,151,10,.3)}
+    .footer-nav-list{list-style:none}
+    .footer-nav-list li{margin-bottom:10px}
+    .footer-nav-list a{font-size:13.5px;color:rgba(255,255,255,.65);transition:color .2s}
+    .footer-nav-list a:hover{color:var(--gold-light)}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 24px;text-align:center;font-size:12px;color:rgba(255,255,255,.4)}
+    .footer-bottom::before{content:'';display:block;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));margin-bottom:20px}
+
+    @media(max-width:900px){
+      .global-nav,.header-cta{display:none}
+      .hamburger{display:flex}
+      .contact-layout{grid-template-columns:1fr}
+      .contact-info-card{position:static}
+      .footer-grid{grid-template-columns:1fr;gap:32px}
+    }
+    @media(max-width:600px){.form-row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="index_shinairoof.html">
+        <div class="logo-mark">
+          <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="14,2 27,12 27,26 1,26 1,12" fill="none" stroke="#1c2b3a" stroke-width="2.5"/>
+            <line x1="14" y1="5" x2="14" y2="26" stroke="#1c2b3a" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <div class="company">株式会社シンアイルーフ</div>
+          <div class="tagline">SHINAI ROOF CO., LTD.</div>
+        </div>
+      </a>
+    </div>
+    <nav class="global-nav">
+      <ul>
+        <li><a href="index_shinairoof.html">HOME</a></li>
+        <li><a href="service_shinairoof.html">施工案内</a></li>
+        <li><a href="works_shinairoof.html">施工実績</a></li>
+        <li><a href="recruit_shinairoof.html">採用情報</a></li>
+        <li><a href="company_shinairoof.html">会社概要</a></li>
+        <li><a href="contact_shinairoof.html" class="active">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <div class="header-tel">
+        <div class="tel-label">お気軽にご相談ください</div>
+        <div class="tel-num">048-990-0403</div>
+      </div>
+      <a href="contact_shinairoof.html" class="btn-header">無料診断</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index_shinairoof.html">HOME</a><a href="service_shinairoof.html">施工案内</a><a href="works_shinairoof.html">施工実績</a>
+  <a href="recruit_shinairoof.html">採用情報</a><a href="company_shinairoof.html">会社概要</a><a href="contact_shinairoof.html">お問い合わせ</a>
+  <div class="m-tel">048-990-0403</div>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index_shinairoof.html">HOME</a><span>›</span><span style="color:rgba(255,255,255,.75)">お問い合わせ</span></div>
+    <div class="page-hero-en">CONTACT</div>
+    <h1 class="page-hero-title">お問い合わせ</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-en">CONTACT</div>
+      <h2 class="section-title">無料現地調査・<span>お問い合わせ</span></h2>
+      <div class="divider"></div>
+      <p class="section-desc">屋根工事・雨漏りのご相談から無料現地調査まで、お気軽にお問い合わせください。</p>
+    </div>
+    <div class="contact-layout fade-up">
+      <div class="contact-info-card">
+        <div class="contact-info-title">お問い合わせ先</div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📞</div>
+          <div>
+            <div class="contact-info-label">お電話</div>
+            <a href="tel:0489900403" class="contact-info-tel">048-990-0403</a>
+            <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">受付時間 8:00〜17:00（日曜・祝日除く）</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📍</div>
+          <div>
+            <div class="contact-info-label">所在地</div>
+            <div class="contact-info-val">〒343-0844<br>埼玉県越谷市大間野町4-241</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">🏗️</div>
+          <div>
+            <div class="contact-info-label">対応エリア</div>
+            <div class="contact-info-val">越谷市・草加市・春日部市・さいたま市・川口市など埼玉県内全域</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">✅</div>
+          <div>
+            <div class="contact-info-label">無料対応</div>
+            <div class="contact-info-val">現地調査・診断・お見積<br>すべて無料です</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <form onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">お名前（姓）<span class="req">必須</span></label>
+              <input type="text" class="form-input" placeholder="山田" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">お名前（名）<span class="req">必須</span></label>
+              <input type="text" class="form-input" placeholder="太郎" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">電話番号<span class="req">必須</span></label>
+            <input type="tel" class="form-input" placeholder="048-000-0000" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">メールアドレス</label>
+            <input type="email" class="form-input" placeholder="example@email.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">住所（施工予定地）</label>
+            <input type="text" class="form-input" placeholder="埼玉県越谷市〇〇">
+          </div>
+          <div class="form-group">
+            <label class="form-label">お問い合わせ種別<span class="req">必須</span></label>
+            <select class="form-select" required>
+              <option value="">選択してください</option>
+              <option>無料現地調査・お見積の依頼</option>
+              <option>屋根葺き替えについて</option>
+              <option>カバー工法について</option>
+              <option>雨漏り修繕について</option>
+              <option>板金工事について</option>
+              <option>採用についての問い合わせ</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">メッセージ<span class="req">必須</span></label>
+            <textarea class="form-textarea" rows="5" placeholder="ご相談内容・気になる症状などをご記入ください。&#10;（例：雨漏りが気になる、築20年で屋根の点検をしたいなど）" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+            送信する
+          </button>
+          <p style="font-size:12px;color:var(--gray);margin-top:14px;text-align:center;line-height:1.7">※ご入力いただいた情報は、お問い合わせへの返答にのみ使用します。<br>通常2営業日以内にご連絡いたします。</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <a href="index_shinairoof.html" style="display:flex;align-items:center;gap:12px;">
+            <div class="logo-mark"><svg viewBox="0 0 28 28"><polygon points="14,2 27,12 27,26 1,26 1,12" fill="none" stroke="#1c2b3a" stroke-width="2.5"/><line x1="14" y1="5" x2="14" y2="26" stroke="#1c2b3a" stroke-width="2"/></svg></div>
+            <div class="logo-text"><div class="company">株式会社シンアイルーフ</div><div class="tagline">SHINAI ROOF CO., LTD.</div></div>
+          </a>
+        </div>
+        <p class="footer-about">埼玉県越谷市を拠点に、屋根工事・板金工事を専門とする会社です。</p>
+        <div class="footer-info">
+          <div><span>📍</span>〒343-0844 埼玉県越谷市大間野町4-241</div>
+          <div><span>📞</span>048-990-0403</div>
+          <div><span>🕐</span>受付時間 8:00〜17:00（日曜・祝日除く）</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-nav-title">施工案内</div>
+        <ul class="footer-nav-list">
+          <li><a href="service_shinairoof.html">屋根葺き替え工事</a></li>
+          <li><a href="service_shinairoof.html">カバー工法</a></li>
+          <li><a href="service_shinairoof.html">雨漏り修繕</a></li>
+          <li><a href="service_shinairoof.html">各種板金工事</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-nav-title">会社情報</div>
+        <ul class="footer-nav-list">
+          <li><a href="company_shinairoof.html">会社概要</a></li>
+          <li><a href="works_shinairoof.html">施工実績</a></li>
+          <li><a href="recruit_shinairoof.html">採用情報</a></li>
+          <li><a href="contact_shinairoof.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 株式会社シンアイルーフ All Rights Reserved.</p></div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('is-visible'); });
+  }, {threshold:0.1});
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  function submitForm(e) {
+    e.preventDefault();
+    alert('お問い合わせありがとうございます。\n2営業日以内にご連絡いたします。');
+  }
+</script>
+</body>
+</html>
